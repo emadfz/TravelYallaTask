@@ -7,7 +7,7 @@ services:
       context: docker/php
       dockerfile: Dockerfile
     container_name: app
-    image: jjuanrivvera99/laravel:mysql-alpine
+    image: laravel:mysql-alpine
     restart: always
     depends_on:
       - redis
@@ -38,7 +38,7 @@ services:
     restart: always
     depends_on:
       - redis
-    image: jjuanrivvera99/laravel:mysql-alpine
+    image: laravel:mysql-alpine
     environment:
       CONTAINER_ROLE: "queue"
     volumes:
