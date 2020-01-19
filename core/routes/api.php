@@ -33,5 +33,6 @@ Route::group([
     Route::apiResource('hotel', 'HotelController');
     Route::apiResource('room', 'RoomController');
     Route::apiResource('room_type', 'RoomTypeController');
+    Route::apiResource('booking', 'BookingController');
 
 });

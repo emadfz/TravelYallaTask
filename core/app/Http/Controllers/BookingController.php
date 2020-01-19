@@ -2,63 +2,106 @@
 
 namespace App\Http\Controllers;
 
-use App\Booking;
+use App\Room;
+use App\Services\BookingService;
+use Exception;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
 {
+    protected $bookingService;
+
+    public function __construct(BookingService $bookingService)
+    {
+        $this->bookingService = $bookingService;
+    }
+
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
-        //
+
+        try {
+            $rooms = $this->bookingService->index();
+            return response()->json($rooms);
+        } catch (Exception $e) {
+            return response()->json($e, '400');
+        }
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $room = $this->bookingService->create($request);
+            return response()->json($room, '201');
+        } catch (Exception $e) {
+            return response()->json($e, '400');
+
+        }
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Booking  $booking
-     * @return \Illuminate\Http\Response
+     * @param room $room
+     * @return Response
      */
-    public function show(Booking $booking)
+    public function show($id)
     {
-        //
+        try {
+            $room = $this->bookingService->read($id);
+
+            return response()->json($room, '201');
+        } catch (Exception $e) {
+            return response()->json($e, '400');
+
+        }
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Booking  $booking
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param room $room
+     * @return Response
      */
-    public function update(Request $request, Booking $booking)
+    public function update(Request $request, $id)
     {
-        //
+        try {
+            $room = $this->bookingService->update($request, $id);
+
+            return response()->json($request, '200');
+        } catch (Exception $e) {
+            return response()->json($e, '400');
+
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Booking  $booking
-     * @return \Illuminate\Http\Response
+     * @param room $room
+     * @return Response
      */
-    public function destroy(Booking $booking)
+    public function destroy($id)
     {
-        //
+        try {
+            $this->bookingService->delete($id);
+            return response()->json(['message'=>'deleted successfully '], '200');
+        } catch (Exception $e) {
+            return response()->json($e, '400');
+
+        }
+
     }
 }

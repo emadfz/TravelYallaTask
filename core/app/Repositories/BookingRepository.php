@@ -6,11 +6,11 @@ use App\Booking;
 
 class BookingRepository
 {
-    protected $room_type;
+    protected $booking;
 
     public function __construct(Booking $booking)
     {
-        $this->room_type = $booking;
+        $this->booking = $booking;
     }
     public function create($attributes)
     {

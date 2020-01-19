@@ -1,0 +1,86 @@
+GET http://localhost/api/room
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-01-19T071943.200.html
+
+###
+
+GET http://localhost/api/room
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-01-19T071928.200.html
+
+###
+
+GET http://localhost/api/room
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-01-19T071924.200.html
+
+###
+
+GET http://localhost/api/room
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-01-19T071826.200.html
+
+###
+
+GET http://localhost/api/room
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-01-19T071820-1.200.html
+
+###
+
+GET http://localhost/api/room
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-01-19T071820.200.html
+
+###
+
+GET http://localhost/api/hotel
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-01-19T071728.200.html
+
+###
+
+GET http://localhost/api/hotel
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-01-19T071721.200.html
+
+###
+
+GET http://localhost/api/room
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-01-19T071653.200.html
+
+###
+
+GET http://localhost/room
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-01-19T071645.404.html
+
+###
+
+GET http://localhost:8080/resources
+Accept: */*
+Cache-Control: no-cache
+
+###
+
