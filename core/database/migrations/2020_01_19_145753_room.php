@@ -18,6 +18,7 @@ class Room extends Migration
             $table->string('room_name');
             $table->integer('hotel_id');
             $table->integer('room_type_id');
+            $table->float('price');
             $table->longText('image');
             $table->timestamps();
         });

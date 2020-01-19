@@ -51,7 +51,7 @@ services:
     restart: always
     depends_on:
       - redis
-    image: jjuanrivvera99/laravel:mysql-alpine
+    image: laravel:mysql-alpine
     environment:
       CONTAINER_ROLE: "scheduler"
     volumes:
@@ -60,7 +60,7 @@ services:
       - app-network
 
   node:
-    image: jjuanrivvera99/node:alpine
+    image: node:alpine
     restart: always
     build:
       context: docker/node
