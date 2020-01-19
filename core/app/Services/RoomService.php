@@ -5,7 +5,7 @@ namespace App\Services;
 use App\Room;
 use App\Repositories\RoomRepository;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\RoomRequest;
 class RoomService
 {
     public function __construct(RoomRepository $room)
@@ -18,7 +18,7 @@ class RoomService
         return $this->room->all();
     }
 
-    public function create(Request $request)
+    public function create(RoomRequest $request)
     {
         $attributes = $request->all();
 
@@ -30,7 +30,7 @@ class RoomService
         return $this->room->find($id);
     }
 
-    public function update(Request $request, $id)
+    public function update(RoomRequest $request, $id)
     {
         $attributes = $request->all();
 

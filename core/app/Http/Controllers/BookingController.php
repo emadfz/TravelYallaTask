@@ -6,6 +6,7 @@ use App\Room;
 use App\Services\BookingService;
 use Exception;
 use Illuminate\Http\Request;
+use App\Http\Requests\BookingRequest;
 
 class BookingController extends Controller
 {
@@ -38,7 +39,7 @@ class BookingController extends Controller
      * @param Request $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(BookingRequest $request)
     {
         try {
             $room = $this->bookingService->create($request);
@@ -75,7 +76,7 @@ class BookingController extends Controller
      * @param room $room
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(BookingRequest $request, $id)
     {
         try {
             $room = $this->bookingService->update($request, $id);

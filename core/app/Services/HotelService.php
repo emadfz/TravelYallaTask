@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Hotel;
+use App\Http\Requests\HotelRequest;
 use App\Repositories\HotelRepository;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,7 @@ class HotelService
         return $this->hotel->all();
     }
 
-    public function create(Request $request)
+    public function create(HotelRequest $request)
     {
         $attributes = $request->all();
 
@@ -30,7 +31,7 @@ class HotelService
         return $this->hotel->find($id);
     }
 
-    public function update(Request $request, $id)
+    public function update(HotelRequest $request, $id)
     {
         $attributes = $request->all();
 

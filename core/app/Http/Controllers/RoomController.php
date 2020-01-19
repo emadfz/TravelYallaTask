@@ -6,6 +6,7 @@ use App\Room;
 use App\Services\RoomService;
 use Exception;
 use Illuminate\Http\Request;
+use App\Http\Requests\RoomRequest;
 
 class RoomController extends Controller
 {
@@ -38,7 +39,7 @@ class RoomController extends Controller
      * @param Request $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(RoomRequest $request)
     {
         try {
             $room = $this->roomService->create($request);
@@ -75,7 +76,7 @@ class RoomController extends Controller
      * @param room $room
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(RoomRequest $request, $id)
     {
         try {
             $room = $this->roomService->update($request, $id);

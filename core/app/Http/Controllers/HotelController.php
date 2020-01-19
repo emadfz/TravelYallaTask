@@ -6,6 +6,7 @@ use App\Hotel;
 use App\Services\HotelService;
 use Exception;
 use Illuminate\Http\Request;
+use App\Http\Requests\HotelRequest;
 
 class HotelController extends Controller
 {
@@ -38,7 +39,7 @@ class HotelController extends Controller
      * @param Request $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(HotelRequest $request)
     {
         try {
             $hotel = $this->hotelService->create($request);
@@ -75,7 +76,7 @@ class HotelController extends Controller
      * @param Hotel $hotel
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(HotelRequest $request, $id)
     {
         try {
             $hotel = $this->hotelService->update($request, $id);

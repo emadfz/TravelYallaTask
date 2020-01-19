@@ -6,6 +6,7 @@ use App\Booking;
 use App\Room;
 use App\Repositories\BookingRepository;
 use Illuminate\Http\Request;
+use App\Http\Requests\BookingRequest;
 
 class BookingService
 {
@@ -19,7 +20,7 @@ class BookingService
         return $this->booking->all();
     }
 
-    public function create(Request $request)
+    public function create(BookingRequest $request)
     {
 
         $attributes = $request->all();
@@ -42,7 +43,7 @@ class BookingService
         return $this->booking->find($id);
     }
 
-    public function update(Request $request, $id)
+    public function update(BookingRequest $request, $id)
     {
         $attributes = $request->all();
 

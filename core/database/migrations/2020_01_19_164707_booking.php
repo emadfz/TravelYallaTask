@@ -18,7 +18,7 @@ class Booking extends Migration
             $table->integer('room_id');
             $table->date('start_date');
             $table->date('end_date');
-            $table->string('custome_full_name');
+            $table->string('customer_full_name');
             $table->string('phone');
             $table->integer('total_nights');
             $table->float('total_price');
