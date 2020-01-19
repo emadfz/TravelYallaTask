@@ -20,3 +20,6 @@ Take the following steps:
 
 
 
+patternes added:-
+- Repository Pattern 
+- Service Pattern 
