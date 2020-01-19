@@ -7,7 +7,7 @@ To run this project you need to have docker and docker-compose installed in your
 Take the following steps:
 
 - clone this repository 
-- change directory: 'cd laravel-nginx-mysql-docker'
+- change directory: 'cd TravelYallaTask'
 - run command: 'docker-compose pull'
 - run command: 'docker-compose up -d'
 - run command: 'sudo chown -R 1000:1000 *'
@@ -20,3 +20,6 @@ Take the following steps:
 
 
 
+patternes added:-
+- Repository Pattern 
+- Service Pattern 
